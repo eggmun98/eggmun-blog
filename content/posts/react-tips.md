@@ -1,5 +1,5 @@
 ---
-title: "React 개발 팁 모음"
+title: "임시 글 2"
 excerpt: "React 개발을 하면서 유용했던 팁들을 정리해보았습니다."
 date: "2024-01-20"
 readTime: "5분"
@@ -17,14 +17,14 @@ React 개발을 하면서 알게 된 유용한 팁들을 공유하고자 합니�
 
 `useState`를 사용할 때 함수형 업데이트를 활용하면 성능상 이점을 얻을 수 있습니다.
 
-\`\`\`javascript
+```javascript
 // 일반적인 방법
 const [count, setCount] = useState(0);
 setCount(count + 1);
 
 // 함수형 업데이트
 setCount(prev => prev + 1);
-\`\`\`
+```
 
 ### 장점
 - **클로저 문제 해결**: 이전 값을 정확히 참조
@@ -38,11 +38,11 @@ setCount(prev => prev + 1);
 
 ### useCallback 예시
 
-\`\`\`javascript
+```javascript
 const handleClick = useCallback(() => {
   // 클릭 핸들러 로직
 }, [dependency]);
-\`\`\`
+```
 
 ## 컴포넌트 구조 예시
 
