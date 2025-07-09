@@ -70,7 +70,7 @@ export default async function HomePage() {
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="font-semibold mb-4">My Blog</h3>
+              <h3 className="font-semibold mb-4">Blog</h3>
               <p className="text-muted-foreground text-sm leading-relaxed">
                 개발자의 일상과 기록을 담은 개인 블로그입니다. 새로운 것을 배우고 경험을 공유합니다.
               </p>
