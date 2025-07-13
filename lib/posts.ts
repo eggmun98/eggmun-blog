@@ -10,7 +10,7 @@ export interface BlogPost {
   excerpt: string
   content: string
   date: string
-  readTime: string
+  readTime?: string
   image: string
   tags: string[]
 }
