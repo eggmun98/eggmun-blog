@@ -33,10 +33,6 @@ export function BlogCard({ post }: BlogCardProps) {
               <Calendar className="w-3 h-3" />
               <span>{post.date}</span>
             </div>
-            <div className="flex items-center gap-1">
-              <Clock className="w-3 h-3" />
-              <span>{post.readTime}</span>
-            </div>
           </div>
 
           <h2 className="text-xl font-semibold mb-3 group-hover:text-primary transition-colors line-clamp-2 min-h-[3.5rem]">

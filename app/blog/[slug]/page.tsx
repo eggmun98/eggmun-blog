@@ -48,10 +48,6 @@ export default async function BlogPost({
                 <Calendar className="w-4 h-4" />
                 <time dateTime={post.date}>{post.date}</time>
               </div>
-              <div className="flex items-center gap-2">
-                <Clock className="w-4 h-4" />
-                <span>{post.readTime}</span>
-              </div>
             </div>
             <div className="flex flex-wrap gap-2 justify-center mb-8">
               {post.tags.map((tag) => (
