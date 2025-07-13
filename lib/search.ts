@@ -5,35 +5,14 @@ import { BlogPost } from "./posts"
 // 클라이언트 컴포넌트에서 사용할 목 데이터
 const mockPosts: BlogPost[] = [
   {
-    slug: "first-post",
-    title: "첫 번째 블로그 포스트",
-    excerpt: "블로그를 시작하며 작성한 첫 번째 글입니다.",
+    slug: "pattern-react-review",
+    title: "패턴으로 익히고 설계로 완성하는 리액트를 읽고 나서",
+    excerpt: "프로젝트가 커질수록 느끼는 복잡성, 안티패턴의 한계, 리팩토링의 필요성. 이 책을 통해 실무에서 바로 써먹을 수 있는 설계 원칙과 성장할 수 있는 계기도 얻었습니다",
     content: "",
-    date: "2024-01-01",
-    readTime: "2분",
+    date: "2025-07-13",
     image: "/images/first-post.jpg",
-    tags: ["블로그", "소개"]
+    tags: ["리액트", "개발 서평", "리뷰", "후기", "독서", "클린 코드", "리팩토링"]
   },
-  {
-    slug: "react-tips",
-    title: "React 개발 팁 모음",
-    excerpt: "React 개발을 더 효율적으로 할 수 있는 팁들을 소개합니다.",
-    content: "",
-    date: "2024-02-15",
-    readTime: "5분",
-    image: "/images/react-tips.jpg",
-    tags: ["React", "개발", "팁"]
-  },
-  {
-    slug: "minimalism",
-    title: "미니멀리즘과 개발자의 삶",
-    excerpt: "미니멀리즘을 개발자의 삶에 적용하는 방법에 대해 이야기합니다.",
-    content: "",
-    date: "2024-03-20",
-    readTime: "4분",
-    image: "/images/minimalism.jpg",
-    tags: ["미니멀리즘", "생산성", "라이프스타일"]
-  }
 ]
 
 export interface SearchResult {
