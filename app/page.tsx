@@ -108,7 +108,7 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground text-sm">
-            <p>© 2024 Eggmun Blog. All rights reserved.</p>
+            <p>© 2025 Eggmun Blog. All rights reserved.</p>
           </div>
         </div>
       </footer>
