@@ -7,7 +7,7 @@ interface BlogPost {
   title: string
   excerpt: string
   date: string
-  readTime: string
+  readTime?: string
   image: string
   tags: string[]
 }
