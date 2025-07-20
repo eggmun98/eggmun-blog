@@ -101,9 +101,10 @@ export default async function HomePage() {
             <div>
               <h3 className="font-semibold mb-4">연락</h3>
               <p className="text-muted-foreground text-sm">
-                궁금한 점이나 피드백이 있으시면
-                <br />
-                언제든 연락해주세요!
+                010-8671-3236
+              </p>
+              <p className="text-muted-foreground text-sm">
+              https://open.kakao.com/me/eggmun
               </p>
             </div>
           </div>
