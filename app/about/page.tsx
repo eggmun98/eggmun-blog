@@ -9,13 +9,7 @@ export default function AboutPage() {
     "JavaScript",
     "TypeScript",
     "React",
-    "Next.js",
-    "Node.js",
-    "Python",
-    "TailwindCSS",
-    "Git",
-    "Docker",
-    "AWS",
+    "ReactNative"
   ]
 
   const interests = [
@@ -44,8 +38,7 @@ export default function AboutPage() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">안녕하세요! 👋</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              개발을 사랑하고, 새로운 것을 배우는 것을 즐기는 개발자입니다. 이 블로그를 통해 배운 것들과 일상의 생각들을
-              기록하고 공유합니다.
+            기술의 본질을 탐구하며, 개발 자체를 좋아하는 개발자입니다.
             </p>
           </section>
 
