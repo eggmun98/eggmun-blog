@@ -22,6 +22,15 @@ const mockPosts: BlogPost[] = [
     image: "/images/blog-start.jpg",
     tags: ["자바스크립트", "개발 서평", "리뷰", "후기", "독서", "코어 자바스크립트", "javascript"]
   },
+  {
+    slug: "react-native-architecture",
+    title: "리액트 네이티브: 구 아키텍처 이해부터 신 아키텍처 핵심까지",
+    excerpt: "React Native 0.76부터 기본값으로 활성화된 New Architecture는 Bridge 기반의 한계를 극복하기 위해 JSI, TurboModules, Fabric Renderer, Codegen을 도입했다. 이 글에서는 구 아키텍처의 구조와 한계, 그리고 신 아키텍처가 제공하는 변화와 실무적인 의미를 비교 정리한다.",
+    content: "",
+    date: "2025-09-29",
+    image: "/images/react-tips-summary.jpg",
+    tags: ["리액트 네이티브", "React Native", "아키텍처", "JSI", "TurboModules", "Fabric", "Codegen", "React18", "기술 분석"]
+  },
 ]
 
 export interface SearchResult {
