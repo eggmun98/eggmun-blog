@@ -31,6 +31,15 @@ const mockPosts: BlogPost[] = [
     image: "/images/react-tips-summary.jpg",
     tags: ["리액트 네이티브", "React Native", "아키텍처", "JSI", "TurboModules", "Fabric", "Codegen", "React18", "기술 분석"]
   },
+  {
+    slug: "javascript-type",
+    title: "자바스크립트 타입에 대하여",
+    excerpt: "자바스크립트의 타입 시스템은 단순히 값의 분류가 아니다. 원시와 참조 타입의 차이, 암묵적 변환과 비교 연산의 함정, 그리고 래퍼 객체와 null의 역사적 유산까지 — 이 글에서는 타입 시스템을 핵심 개념부터 실무에서 자주 마주치는 함정까지 정리한다.",
+    content: "",
+    date: "2025-09-30",
+    image: "/images/component-structure.png",
+    tags: ["자바스크립트", "타입", "javascript", "프론트엔드", "개발 기본기", "JS 타입"]
+  },
 ]
 
 export interface SearchResult {
