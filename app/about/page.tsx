@@ -13,10 +13,10 @@ export default function AboutPage() {
   ]
 
   const interests = [
-    { name: "헬스", icon: Dumbbell, description: "몸을 키우는 웨이트 트레이닝" },
-    { name: "클라이밍", icon: Mountain, description: "볼더링 문제를 푸는 클라이밍" },
-    { name: "오목", icon: DotSquare, description: "다섯 개의 돌을 먼저 연결하는 수싸움의 전략 게임" },
-    { name: "예능", icon: TvMinimalPlay, description: "다양한 예능 프로그램 시청" },
+    { name: "헬스", icon: Dumbbell, description: "몸을 키우는 재미로 시작했습니다. 꾸준히 운동하며 3대 500을 목표로 두고 있습니다." },
+    { name: "클라이밍", icon: Mountain, description: "더클 기준 파랑색 레벨이며, 문제를 푸는 과정이 재미있습니다. 다음 목표는 빨강색 완등입니다." },
+    { name: "오목", icon: DotSquare, description: "현재 4단이며 5단을 목표로 하고 있습니다. 수싸움을 하며 전략을 세우는 게 매력적이라 즐겨 둡니다." },
+    { name: "예능", icon: TvMinimalPlay, description: "무한도전, 신서유기, 기안장 같은 예능을 즐겨봅니다. 저에게 웃음을 가져다주는 소중한 취미입니다." },
   ]
 
   return (
