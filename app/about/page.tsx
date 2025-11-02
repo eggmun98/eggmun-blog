@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Calendar, Code, Coffee, Book, Music, Mountain, Dumbbell } from "lucide-react"
+import { MapPin, Calendar, Music, Mountain, Dumbbell, DotSquare } from "lucide-react"
 import Image from "next/image"
 
 export default function AboutPage() {
@@ -13,9 +13,9 @@ export default function AboutPage() {
   ]
 
   const interests = [
-    { name: "개발", icon: Code, description: "깊게 공부하고 라이브러리 제작" },
     { name: "헬스", icon: Dumbbell, description: "몸을 키우는 웨이트 트레이닝" },
     { name: "클라이밍", icon: Mountain, description: "볼더링 문제를 푸는 클라이밍" },
+    { name: "오목", icon: DotSquare, description: "다섯 개의 돌을 먼저 연결하는 수싸움의 전략 게임" },
     { name: "음악", icon: Music, description: "다양한 장르의 음악 감상" },
   ]
 
