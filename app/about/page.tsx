@@ -38,7 +38,7 @@ export default function AboutPage() {
             </div>
             <h1 className="text-4xl font-bold text-foreground">안녕하세요! 👋</h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            기술의 본질을 탐구하며, 개발 자체를 좋아하는 개발자입니다.
+            {"필요하면 직접 만들고, 만든 건 세상과 나눕니다."}
             </p>
           </section>
 
