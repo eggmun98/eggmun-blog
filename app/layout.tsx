@@ -9,7 +9,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "개발자 문성진 - 기술의 본질을 탐구하며, 개발 자체를 좋아하는 개발자",
+  title: "개발자 문성진",
   description: "개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
   generator: 'v0.dev',
   icons: {
