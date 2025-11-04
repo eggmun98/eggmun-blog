@@ -5,6 +5,15 @@ import { BlogPost } from "./posts"
 // 클라이언트 컴포넌트에서 사용할 목 데이터
 const mockPosts: BlogPost[] = [
   {
+    slug: "10to10-development-journey",
+    title: "10to10을 하면서: 6개월간의 개발 몰입 여정",
+    excerpt: "매일 아침 10시부터 밤 10시까지 개발에 몰입했던 6개월의 경험과, 지속 가능한 몰입에 대해 배운 것들을 공유합니다. 속도와 집중력, 체력 관리의 중요성, 그리고 장기적으로 유지 가능한 개발 방식에 대한 고찰.",
+    content: "",
+    date: "2025-11-04",
+    image: "/images/digital-detox.png",
+    tags: ["개발 경험", "몰입", "생산성", "체력 관리", "지속 가능성", "개발 루틴", "성장", "개발 문화", "회고"]
+  },
+  {
     slug: "pattern-react-review",
     title: "패턴으로 익히고 설계로 완성하는 리액트를 읽고 나서",
     excerpt: "프로젝트가 커질수록 느끼는 복잡성, 안티패턴의 한계, 리팩토링의 필요성. 이 책을 통해 실무에서 바로 써먹을 수 있는 설계 원칙과 성장할 수 있는 계기도 얻었습니다",
@@ -30,7 +39,8 @@ const mockPosts: BlogPost[] = [
     date: "2025-09-29",
     image: "/images/react-tips-summary.jpg",
     tags: ["리액트 네이티브", "React Native", "아키텍처", "JSI", "TurboModules", "Fabric", "Codegen", "React18", "기술 분석"]
-  }
+    },
+  
 ]
 
 export interface SearchResult {
