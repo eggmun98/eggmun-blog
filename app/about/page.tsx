@@ -6,10 +6,15 @@ import Image from "next/image"
 
 export default function AboutPage() {
   const skills = [
+    "React",
+    "Next.js",
+    "ReactNative",
     "JavaScript",
     "TypeScript",
-    "React",
-    "ReactNative"
+    "React Query",
+    "Zustand",
+    "AWS",
+    "Docker",
   ]
 
   const interests = [
