@@ -5,12 +5,17 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Script from "next/script"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   // 🔹 메인 타이틀
-  title: "개발자 문성진",
+
+  title: {
+    default: "문성진 | 개발자",
+    template: "%s | 문성진", 
+  },
   description: "프론트엔드 개발자 문성진의 개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
 
   // 🔹 도메인 기준 URL (OG / Twitter에서 중요)
@@ -36,6 +41,9 @@ export const metadata: Metadata = {
   // 🔹 검색 키워드
   keywords: [
     "문성진",
+    "eggmun",
+    "eggmun98",
+    "문성진 | 개발자",
     "개발자 문성진",
     "프론트엔드 개발자",
     "프론트엔드 개발 블로그",
@@ -49,7 +57,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "ko_KR",
     url: "https://eggmun.com",
-    title: "개발자 문성진",
+    title: "문성진 | 개발자",
     description: "프론트엔드 개발자 문성진의 개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
     siteName: "개발자 문성진",
     images: [
@@ -57,14 +65,14 @@ export const metadata: Metadata = {
         url: "/images/logos/eggmun-500x500.png",
         width: 500,
         height: 500,
-        alt: "개발자 문성진",
+        alt: "문성진 | 개발자",
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "개발자 문성진",
+    title: "문성진 | 개발자",
     description: "프론트엔드 개발자 문성진의 개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
     images: ["/images/logos/eggmun-500x500.png"],
   },
@@ -72,6 +80,13 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 }
 
@@ -83,6 +98,20 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <body className={inter.className}>
+      <Script id="ld-person" type="application/ld+json" strategy="beforeInteractive">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            name: "문성진",
+            url: "https://eggmun.com",
+            jobTitle: "Frontend Engineer (프론트엔드 개발자)",
+            image: "https://eggmun.com/images/munSeongJin.jpeg",
+            sameAs: [
+              "https://github.com/eggmun98",
+              "https://linkedin.com/in/eggmun"
+            ]
+          })}
+        </Script>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
