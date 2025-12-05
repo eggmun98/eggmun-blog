@@ -40,7 +40,15 @@ const mockPosts: BlogPost[] = [
     image: "/images/react-tips-summary.jpg",
     tags: ["리액트 네이티브", "React Native", "아키텍처", "JSI", "TurboModules", "Fabric", "Codegen", "React18", "기술 분석"]
     },
-  
+  {
+    slug: "i-decided-to-live-as-myself",
+    title: "나는 나로 살기로 했다를 읽고",
+    excerpt: "『나는 나로 살기로 했다』를 읽으며 느낀 인간관계와 인생에 대한 생각들. 재취업 준비 중인 지금, 다른 사람과의 비교에서 벗어나 나만의 삶을 찾아가는 과정을 담담하게 풀어낸다.",
+    content: "",
+    date: "2025-12-05",
+    image: "/images/before-after-declutter.jpg",
+    tags: ["독서", "리뷰", "자기계발", "회고", "인생", "성장", "후기"]
+  },
 ]
 
 export interface SearchResult {
