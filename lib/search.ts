@@ -5,6 +5,24 @@ import { BlogPost } from "./posts"
 // 클라이언트 컴포넌트에서 사용할 목 데이터
 const mockPosts: BlogPost[] = [
   {
+    slug: "reflecting-on-changing-times",
+    title: "시대의 변화를 느끼며",
+    excerpt: "Codex를 두 계정으로 운용하며 직접 래퍼 CLI를 만든 경험, AI 에이전트 중심으로 바뀐 개발 방식, 그리고 그 시대일수록 테스트와 문서가 더 중요해진다는 생각을 정리했다.",
+    content: "",
+    date: "2026-03-20",
+    image: "/images/blog-start.jpg",
+    tags: ["개발", "AI", "Codex", "회고", "테스트", "문서화", "창작"]
+  },
+  {
+    slug: "i-decided-to-live-as-myself",
+    title: "나는 나로 살기로 했다를 읽고",
+    excerpt: "『나는 나로 살기로 했다』를 읽으며 느낀 인간관계와 인생에 대한 생각들. 재취업 준비 중인 지금, 다른 사람과의 비교에서 벗어나 나만의 삶을 찾아가는 과정을 담담하게 풀어낸다.",
+    content: "",
+    date: "2025-12-05",
+    image: "/images/before-after-declutter.jpg",
+    tags: ["독서", "리뷰", "자기계발", "회고", "인생", "성장", "후기"]
+  },
+  {
     slug: "10to10-development-journey",
     title: "10to10을 하면서: 6개월간의 개발 몰입 여정",
     excerpt: "매일 아침 10시부터 밤 10시까지 개발에 몰입했던 6개월의 경험과, 지속 가능한 몰입에 대해 배운 것들을 공유합니다. 속도와 집중력, 체력 관리의 중요성, 그리고 장기적으로 유지 가능한 개발 방식에 대한 고찰.",
@@ -41,13 +59,13 @@ const mockPosts: BlogPost[] = [
     tags: ["리액트 네이티브", "React Native", "아키텍처", "JSI", "TurboModules", "Fabric", "Codegen", "React18", "기술 분석"]
     },
   {
-    slug: "i-decided-to-live-as-myself",
-    title: "나는 나로 살기로 했다를 읽고",
-    excerpt: "『나는 나로 살기로 했다』를 읽으며 느낀 인간관계와 인생에 대한 생각들. 재취업 준비 중인 지금, 다른 사람과의 비교에서 벗어나 나만의 삶을 찾아가는 과정을 담담하게 풀어낸다.",
+    slug: "spa-without-react",
+    title: "나는 얼마나 개발을 편하게 했는가",
+    excerpt: "React 없이 SPA를 직접 구현하면서 DOM 조작, 상태 관리, 라우팅을 바닐라 자바스크립트로 다뤄본 경험과 그 과정에서 느낀 React의 가치에 대한 글.",
     content: "",
-    date: "2025-12-05",
-    image: "/images/before-after-declutter.jpg",
-    tags: ["독서", "리뷰", "자기계발", "회고", "인생", "성장", "후기"]
+    date: "2024-09-28",
+    image: "/images/react-logo.png",
+    tags: ["React", "SPA", "바닐라 자바스크립트", "프론트엔드", "과제", "회고"]
   },
 ]
 
