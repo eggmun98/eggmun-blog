@@ -2,10 +2,60 @@ import { getPost, getPosts } from "@/lib/posts"
 import { Header } from "@/components/header"
 import { GitHubComments } from "@/components/github-comments"
 import { MarkdownContent } from "@/components/markdown-content"
-import { Calendar, Clock, ArrowLeft } from "lucide-react"
+import { Calendar, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
+
+type BlogPostPageProps = {
+  params: Promise<{ slug: string }>
+}
+
+const SITE_URL = "https://eggmun.com"
+
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const post = getPost(slug)
+
+  if (!post) {
+    return {}
+  }
+
+  const postUrl = `${SITE_URL}/blog/${post.slug}`
+  const imageUrl = post.image ? new URL(post.image, SITE_URL).toString() : `${SITE_URL}/images/logos/eggmun-500x500.png`
+
+  return {
+    title: post.title,
+    description: post.excerpt,
+    alternates: {
+      canonical: postUrl,
+    },
+    openGraph: {
+      type: "article",
+      url: postUrl,
+      title: post.title,
+      description: post.excerpt,
+      siteName: "문성진 | 개발자",
+      locale: "ko_KR",
+      publishedTime: post.date,
+      authors: ["문성진"],
+      tags: post.tags,
+      images: [
+        {
+          url: imageUrl,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.title,
+      description: post.excerpt,
+      images: [imageUrl],
+    },
+  }
+}
 
 export async function generateStaticParams() {
   const posts = await getPosts()
@@ -16,9 +66,7 @@ export async function generateStaticParams() {
 
 export default async function BlogPost({
   params,
-}: {
-  params: Promise<{ slug: string }>
-}) {
+}: BlogPostPageProps) {
   const { slug } = await params
   const post = await getPost(slug)
 
