@@ -6,7 +6,6 @@ import { useState, useEffect, useRef } from "react"
 import { Search, X, Clock, TrendingUp } from "lucide-react"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { searchPosts, getPopularTags } from "@/lib/search"
 import { useRouter } from "next/navigation"
 
 interface SearchResult {
@@ -20,6 +19,7 @@ interface SearchResult {
 export function SearchBar() {
   const [query, setQuery] = useState("")
   const [results, setResults] = useState<SearchResult[]>([])
+  const [popularTags, setPopularTags] = useState<string[]>([])
   const [isOpen, setIsOpen] = useState(false)
   const [selectedIndex, setSelectedIndex] = useState(-1)
   const [recentSearches, setRecentSearches] = useState<string[]>([])
@@ -33,17 +33,48 @@ export function SearchBar() {
     if (saved) {
       setRecentSearches(JSON.parse(saved))
     }
+
+    fetch("/api/search")
+      .then((response) => response.json())
+      .then((data: { popularTags?: string[] }) => {
+        setPopularTags(data.popularTags ?? [])
+      })
+      .catch(() => {
+        setPopularTags([])
+      })
   }, [])
 
   // 검색 결과 업데이트
   useEffect(() => {
-    if (query.trim()) {
-      const searchResults = searchPosts(query)
-      setResults(searchResults)
-      setSelectedIndex(-1)
-    } else {
+    const searchTerm = query.trim()
+
+    if (!searchTerm) {
       setResults([])
       setSelectedIndex(-1)
+      return
+    }
+
+    const controller = new AbortController()
+    const timeoutId = window.setTimeout(() => {
+      fetch(`/api/search?q=${encodeURIComponent(searchTerm)}`, {
+        signal: controller.signal,
+      })
+        .then((response) => response.json())
+        .then((data: { results?: SearchResult[] }) => {
+          setResults(data.results ?? [])
+          setSelectedIndex(-1)
+        })
+        .catch((error) => {
+          if (error.name !== "AbortError") {
+            setResults([])
+            setSelectedIndex(-1)
+          }
+        })
+    }, 150)
+
+    return () => {
+      controller.abort()
+      window.clearTimeout(timeoutId)
     }
   }, [query])
 
@@ -121,8 +152,6 @@ export function SearchBar() {
     setRecentSearches([])
     localStorage.removeItem("recentSearches")
   }
-
-  const popularTags = getPopularTags()
 
   return (
     <div ref={searchRef} className="relative w-full max-w-md">
