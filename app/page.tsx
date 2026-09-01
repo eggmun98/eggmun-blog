@@ -106,6 +106,11 @@ export default async function HomePage() {
               <p className="text-muted-foreground text-sm">
               https://open.kakao.com/me/eggmun
               </p>
+              <p className="text-muted-foreground text-sm">
+                <Link href="mailto:eggmun@eggmun.com" className="hover:text-foreground transition-colors">
+                  eggmun@eggmun.com
+                </Link>
+              </p>
             </div>
           </div>
           <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground text-sm">

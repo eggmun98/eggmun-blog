@@ -85,7 +85,7 @@ export function Header() {
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
-                href="mailto:eggmun98@gmail.com"
+                href="mailto:eggmun98@gmail.com,eggmun@eggmun.com"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="w-4 h-4" />
