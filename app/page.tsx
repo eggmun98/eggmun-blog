@@ -106,7 +106,14 @@ export default async function HomePage() {
                 010-8671-3236
               </p>
               <p className="text-muted-foreground text-sm">
-              https://open.kakao.com/me/eggmun
+                <Link
+                  href="https://open.kakao.com/me/eggmun"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-foreground transition-colors"
+                >
+                  https://open.kakao.com/me/eggmun
+                </Link>
               </p>
               <p className="text-muted-foreground text-sm">
                 <Link href="mailto:eggmun@eggmun.com" className="hover:text-foreground transition-colors">
@@ -116,7 +123,7 @@ export default async function HomePage() {
             </div>
           </div>
           <div className="border-t border-border/40 mt-8 pt-8 text-center text-muted-foreground text-sm">
-            <p>© 2025 Eggmun Blog. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Eggmun Blog. All rights reserved.</p>
           </div>
         </div>
       </footer>
