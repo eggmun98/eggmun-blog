@@ -2,6 +2,7 @@ import { getPosts } from "@/lib/posts"
 import { BlogCard } from "@/components/blog-card"
 import { Header } from "@/components/header"
 import { Button } from "@/components/ui/button"
+import { siteConfig } from "@/lib/site-config"
 import { ArrowRight, Sparkles } from "lucide-react"
 import Link from "next/link"
 
@@ -90,7 +91,7 @@ export default async function HomePage() {
                 </li>
                 <li>
                   <Link
-                    href="https://github.com/eggmun98"
+                    href={siteConfig.links.github}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-muted-foreground hover:text-foreground transition-colors"
@@ -103,21 +104,23 @@ export default async function HomePage() {
             <div>
               <h3 className="font-semibold mb-4">연락</h3>
               <p className="text-muted-foreground text-sm">
-                010-8671-3236
+                <Link href={siteConfig.contact.phone.href} className="hover:text-foreground transition-colors">
+                  {siteConfig.contact.phone.label}
+                </Link>
               </p>
               <p className="text-muted-foreground text-sm">
                 <Link
-                  href="https://open.kakao.com/me/eggmun"
+                  href={siteConfig.contact.kakao.href}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-foreground transition-colors"
                 >
-                  https://open.kakao.com/me/eggmun
+                  {siteConfig.contact.kakao.label}
                 </Link>
               </p>
               <p className="text-muted-foreground text-sm">
-                <Link href="mailto:eggmun@eggmun.com" className="hover:text-foreground transition-colors">
-                  eggmun@eggmun.com
+                <Link href={siteConfig.contact.email.href} className="hover:text-foreground transition-colors">
+                  {siteConfig.contact.email.label}
                 </Link>
               </p>
             </div>

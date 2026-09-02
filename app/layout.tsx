@@ -6,6 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 import { Analytics } from "@vercel/analytics/react"
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Script from "next/script"
+import { siteConfig } from "@/lib/site-config"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -19,10 +20,10 @@ export const metadata: Metadata = {
   description: "프론트엔드 개발자 문성진의 개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
 
   // 🔹 도메인 기준 URL (OG / Twitter에서 중요)
-  metadataBase: new URL("https://eggmun.com"),
+  metadataBase: new URL(siteConfig.url),
 
   // 🔹 저자 정보
-  authors: [{ name: "문성진", url: "https://eggmun.com" }],
+  authors: [{ name: siteConfig.author.name, url: siteConfig.url }],
   creator: "문성진",
   generator: "v0.dev",
 
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
 
   // 🔹 canonical URL
   alternates: {
-    canonical: "https://eggmun.com",
+    canonical: siteConfig.url,
   },
 
   // 🔹 검색 키워드
@@ -56,7 +57,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "ko_KR",
-    url: "https://eggmun.com",
+    url: siteConfig.url,
     title: "문성진 | 개발자",
     description: "프론트엔드 개발자 문성진의 개발, 일상, 그리고 생각들을 기록하는 미니멀한 개인 블로그입니다.",
     siteName: "개발자 문성진",
@@ -102,13 +103,13 @@ export default function RootLayout({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "문성진",
-            url: "https://eggmun.com",
-            jobTitle: "Frontend Engineer (프론트엔드 개발자)",
-            image: "https://eggmun.com/images/munSeongJin.jpeg",
+            name: siteConfig.author.name,
+            url: siteConfig.url,
+            jobTitle: siteConfig.author.title,
+            image: siteConfig.author.image,
             sameAs: [
-              "https://github.com/eggmun98",
-              "https://linkedin.com/in/eggmun"
+              siteConfig.links.github,
+              siteConfig.links.linkedin
             ]
           })}
         </Script>

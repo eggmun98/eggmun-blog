@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { ThemeToggle } from "@/components/theme-toggle"
 import { SearchBar } from "@/components/search-bar"
+import { siteConfig } from "@/lib/site-config"
 import { Home, User, BookOpen, Github, Mail, Linkedin } from "lucide-react"
 import Image from "next/image"
 
@@ -67,7 +68,7 @@ export function Header() {
           <div className="flex items-center space-x-4 flex-shrink-0">
             <div className="hidden sm:flex items-center space-x-2">
               <Link
-                href="https://www.linkedin.com/in/eggmun"
+                href={siteConfig.links.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -76,7 +77,7 @@ export function Header() {
                 <span className="sr-only">LinkedIn</span>
               </Link>
               <Link
-                href="https://github.com/eggmun98"
+                href={siteConfig.links.github}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -85,7 +86,7 @@ export function Header() {
                 <span className="sr-only">GitHub</span>
               </Link>
               <Link
-                href="mailto:eggmun98@gmail.com,eggmun@eggmun.com"
+                href={siteConfig.links.email}
                 className="p-2 text-muted-foreground hover:text-foreground transition-colors"
               >
                 <Mail className="w-4 h-4" />

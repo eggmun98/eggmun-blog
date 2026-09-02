@@ -2,6 +2,7 @@ import { getPost, getPosts } from "@/lib/posts"
 import { Header } from "@/components/header"
 import { GitHubComments } from "@/components/github-comments"
 import { MarkdownContent } from "@/components/markdown-content"
+import { siteConfig } from "@/lib/site-config"
 import { Calendar, ArrowLeft } from "lucide-react"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -12,7 +13,7 @@ type BlogPostPageProps = {
   params: Promise<{ slug: string }>
 }
 
-const SITE_URL = "https://eggmun.com"
+const SITE_URL = siteConfig.url
 
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
