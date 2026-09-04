@@ -6,8 +6,6 @@ import type { Components } from "react-markdown"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism"
 import { useTheme } from "next-themes"
-import { createHeadingId } from "@/lib/markdown-headings"
-import type { ReactNode } from "react"
 
 interface MarkdownContentProps {
   content: string
@@ -21,28 +19,9 @@ function normalizeMarkdownForCjkEmphasis(content: string) {
     .replace(/\*([^*\n]+)\*([가-힣])/g, "*$1*\u200B$2")
 }
 
-function getNodeText(node: ReactNode): string {
-  if (typeof node === "string" || typeof node === "number") {
-    return String(node)
-  }
-
-  if (Array.isArray(node)) {
-    return node.map(getNodeText).join("")
-  }
-
-  if (node && typeof node === "object" && "props" in node) {
-    const props = node.props as { children?: ReactNode }
-    return getNodeText(props.children)
-  }
-
-  return ""
-}
-
 export function MarkdownContent({ content }: MarkdownContentProps) {
   const { resolvedTheme } = useTheme()
   const normalizedContent = normalizeMarkdownForCjkEmphasis(content)
-  const usedHeadingIds = new Map<string, number>()
-  const getHeadingId = (children: ReactNode) => createHeadingId(getNodeText(children), usedHeadingIds)
 
   const components: Components = {
     code({ node, className, children, ...props }) {
@@ -65,27 +44,16 @@ export function MarkdownContent({ content }: MarkdownContentProps) {
       )
     },
     h1: ({ children }) => (
-      <h1
-        id={getHeadingId(children)}
-        className="scroll-mt-24 text-3xl font-bold mt-8 mb-4 text-foreground border-b border-border pb-2"
-      >
-        {children}
-      </h1>
+      <h1 className="text-3xl font-bold mt-8 mb-4 text-foreground border-b border-border pb-2">{children}</h1>
     ),
     h2: ({ children }) => (
-      <h2 id={getHeadingId(children)} className="scroll-mt-24 text-2xl font-semibold mt-14 mb-4 text-foreground">
-        {children}
-      </h2>
+      <h2 className="text-2xl font-semibold mt-14 mb-4 text-foreground">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 id={getHeadingId(children)} className="scroll-mt-24 text-xl font-medium mt-10 mb-3 text-foreground">
-        {children}
-      </h3>
+      <h3 className="text-xl font-medium mt-10 mb-3 text-foreground">{children}</h3>
     ),
     h4: ({ children }) => (
-      <h4 id={getHeadingId(children)} className="scroll-mt-24 text-lg font-medium mt-4 mb-2 text-foreground">
-        {children}
-      </h4>
+      <h4 className="text-lg font-medium mt-4 mb-2 text-foreground">{children}</h4>
     ),
     blockquote: ({ children }) => (
       <blockquote className="border-l-4 border-primary pl-4 py-2 my-4 bg-muted/50 rounded-r-md italic">
