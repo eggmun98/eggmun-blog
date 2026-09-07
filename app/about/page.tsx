@@ -34,7 +34,7 @@ export default function AboutPage() {
           <section className="text-center space-y-4">
             <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6">
               <Image 
-                src="/images/munSeongJin.jpeg" 
+                src="/images/profile/munSeongJin.jpeg" 
                 alt="문성진 프로필" 
                 width={128} 
                 height={128}

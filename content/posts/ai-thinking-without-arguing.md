@@ -2,7 +2,7 @@
 title: "어느 순간 AI에게 반론하지 않게 되었다"
 excerpt: "AI가 똑똑해질수록 오히려 내가 직접 추론하고 반론하는 일이 줄어든 것은 아닌지 돌아본 기록."
 date: "2026-09-07"
-image: "/images/ai-thinking-minimal-3d-thumbnail.png"
+image: "/images/posts/ai-thinking-without-arguing/thumbnail.png"
 tags: ["AI", "생각", "추론", "비판적사고", "글쓰기"]
 ---
 

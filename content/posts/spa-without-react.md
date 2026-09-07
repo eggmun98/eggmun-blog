@@ -2,7 +2,7 @@
 title: "나는 얼마나 개발을 편하게 했는가"
 excerpt: "React 없이 SPA를 직접 구현하면서 DOM 조작, 상태 관리, 라우팅을 바닐라 자바스크립트로 다뤄본 경험과 그 과정에서 느낀 React의 가치에 대한 글."
 date: "2024-09-28"
-image: "/images/react-logo.png"
+image: "/images/posts/spa-without-react/thumbnail.jpg"
 tags: ["React", "SPA", "바닐라 자바스크립트", "프론트엔드", "과제", "회고"]
 ---
 

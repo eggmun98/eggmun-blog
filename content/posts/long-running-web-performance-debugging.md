@@ -2,7 +2,7 @@
 title: "메모리도 CPU도 멀쩡한데 웹이 느려졌다"
 excerpt: "장시간 실행 후에만 나타난 웹 성능 문제를 6만 8천 개의 타이머와 이벤트 리스너 누적으로 추적하며 배운 디버깅 기록."
 date: "2026-09-04"
-image: "/images/performance-chart.jpg"
+image: "/images/posts/long-running-web-performance-debugging/thumbnail.jpg"
 tags: ["웹성능", "JavaScript", "디버깅", "브라우저", "비동기"]
 ---
 
@@ -266,7 +266,7 @@ rAF/f      5.10 → 5.12    ±0%
 
 그리고 테스트가 끝나면 JSON으로 원본 요약 데이터를 저장하도록 했습니다.
 
-![SOAK Probe HUD](/images/web-performance/01-soak-probe-hud.svg)
+![SOAK Probe HUD](/images/posts/long-running-web-performance-debugging/figures/01-soak-probe-hud.svg)
 _SOAK Probe HUD는 장시간 실행 중에도 p99, heap, texture, listener, rAF 같은 핵심 지표를 한 화면에서 확인하기 위한 작은 관찰 창이었다._
 
 ---
@@ -299,7 +299,7 @@ _SOAK Probe HUD는 장시간 실행 중에도 p99, heap, texture, listener, rAF 
 
 p95와 p99만 시간이 지나면서 크게 올라갔습니다.
 
-![median, p95, p99 장시간 변화](/images/web-performance/02-frame-percentiles-long-run.svg)
+![median, p95, p99 장시간 변화](/images/posts/long-running-web-performance-debugging/figures/02-frame-percentiles-long-run.svg)
 _여기서 spin은 같은 동작을 한 번 반복 실행한 단위다. median은 거의 16.7ms에 머무르지만, p95와 p99는 시간이 지날수록 꼬리 프레임이 무거워지는 모습을 보여준다._
 
 여기서 첫 번째 교훈을 얻었습니다.
@@ -343,7 +343,7 @@ _여기서 spin은 같은 동작을 한 번 반복 실행한 단위다. median�
 
 100ms라면 대략 다섯 번의 렌더링 기회를 놓친 것입니다.
 
-![p99가 16.67ms 배수로 증가하는 그래프](/images/web-performance/03-p99-frame-multiples.svg)
+![p99가 16.67ms 배수로 증가하는 그래프](/images/posts/long-running-web-performance-debugging/figures/03-p99-frame-multiples.svg)
 _p99가 16.67ms의 배수에 걸린다는 것은 렌더링 기회를 통째로 놓치고 있다는 신호였다._
 
 이제 범인을 찾을 차례였습니다.
@@ -378,7 +378,7 @@ requestAnimationFrame 루프가 중복 생성된 것도 아니었습니다.
 
 그런데 화면에서는 100ms짜리 프레임이 나오고 있었습니다.
 
-![Heap, GPU, rAF는 평평하지만 p99만 상승하는 그래프](/images/web-performance/04-resource-flat-p99-rising.svg)
+![Heap, GPU, rAF는 평평하지만 p99만 상승하는 그래프](/images/posts/long-running-web-performance-debugging/figures/04-resource-flat-p99-rising.svg)
 _JS Heap, GPU texture, rAF/frame은 큰 변화가 없는데 Frame p99만 계속 상승했다._
 
 여기서 한동안 막혔습니다.
@@ -468,7 +468,7 @@ setTimeout.
 
 시간이 지나면서 무려 백 배 이상 증가하고 있었습니다.
 
-![setTimeout per frame 폭증 그래프](/images/web-performance/05-timeout-per-frame-explosion.svg)
+![setTimeout per frame 폭증 그래프](/images/posts/long-running-web-performance-debugging/figures/05-timeout-per-frame-explosion.svg)
 _문제는 느린 함수 하나가 아니라, 프레임마다 처리해야 하는 setTimeout callback 수가 폭발적으로 늘어난 것이었다._
 
 이제 처음으로 방향이 생겼습니다.
@@ -517,7 +517,7 @@ _문제는 느린 함수 하나가 아니라, 프레임마다 처리해야 하�
 
 이제 범인의 위치를 거의 찾았습니다.
 
-![Heap Snapshot과 Retainer Path](/images/web-performance/06-heap-retainer-path.svg)
+![Heap Snapshot과 Retainer Path](/images/posts/long-running-web-performance-debugging/figures/06-heap-retainer-path.svg)
 _Heap Snapshot의 증가분과 Retainer Path를 함께 보면, 누적된 closure와 Timeout 객체가 오디오 end listener 배열에 매달려 있다는 흐름이 보인다._
 
 ---
@@ -779,7 +779,7 @@ setTimeout(fn, 0);
 
 라고 뭉뚱그려 이해하면 이번 문제 같은 상황을 설명할 수 없었습니다.
 
-![잘못 이해했던 비동기 모델과 실제 비동기 모델](/images/web-performance/07-async-mental-model.svg)
+![잘못 이해했던 비동기 모델과 실제 비동기 모델](/images/posts/long-running-web-performance-debugging/figures/07-async-mental-model.svg)
 _setTimeout은 실행을 나중으로 미룰 뿐, callback의 JavaScript 실행은 결국 메인 스레드로 돌아온다._
 
 ---
@@ -950,7 +950,7 @@ N² / 2
 
 성능 관점에서는 곱셈을 덧셈으로 바꾼 것에 가까웠습니다.
 
-![O(N²)에서 O(N)으로 바뀐 실행 비용](/images/web-performance/08-on2-to-on.svg)
+![O(N²)에서 O(N)으로 바뀐 실행 비용](/images/posts/long-running-web-performance-debugging/figures/08-on2-to-on.svg)
 _리스너가 누적되던 구조를 한 번만 등록하고 제거되는 구조로 바꾸자, 누적 처리량의 증가 모양이 달라졌다._
 
 ---
@@ -1022,7 +1022,7 @@ p99도 안정적이었고,
 
 최소한 그 지점을 충분히 넘어가야 합니다.
 
-![수정 전후 비교와 최종 장시간 검증](/images/web-performance/09-before-after-final-validation.svg)
+![수정 전후 비교와 최종 장시간 검증](/images/posts/long-running-web-performance-debugging/figures/09-before-after-final-validation.svg)
 _수정 전에는 p99와 setTimeout/frame이 함께 무너졌고, 수정 후에는 기존 실패 조건을 넘긴 뒤에도 p99가 안정적으로 유지됐다._
 
 이 과정에서 검증에 대해서도 하나 배웠습니다.

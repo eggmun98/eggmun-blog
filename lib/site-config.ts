@@ -4,7 +4,7 @@ export const siteConfig = {
   author: {
     name: "문성진",
     title: "Frontend Engineer (프론트엔드 개발자)",
-    image: "https://eggmun.com/images/munSeongJin.jpeg",
+    image: "https://eggmun.com/images/profile/munSeongJin.jpeg",
   },
   contact: {
     phone: {

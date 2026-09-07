@@ -2,7 +2,7 @@
 title: "시대의 변화를 느끼며"
 excerpt: "Codex를 두 계정으로 운용하며 직접 래퍼 CLI를 만든 경험, AI 에이전트 중심으로 바뀐 개발 방식, 그리고 그 시대일수록 테스트와 문서가 더 중요해진다는 생각을 정리했다."
 date: "2026-03-20"
-image: "/images/blog-start.jpg"
+image: "/images/posts/reflecting-on-changing-times/thumbnail.jpg"
 tags: ["개발", "AI", "Codex", "회고", "테스트", "문서화", "창작"]
 ---
 

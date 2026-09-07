@@ -22,7 +22,7 @@ export function BlogCard({ post }: BlogCardProps) {
       <Card className="card-hover overflow-hidden border border-border/50 shadow-sm hover:shadow-lg transition-all duration-300 bg-card hover:bg-card/90 backdrop-blur-sm h-[420px] flex flex-col">
         <div className="h-48 overflow-hidden">
           <img
-            src={post.image || "/placeholder.svg"}
+            src={post.image || "/images/placeholders/placeholder.svg"}
             alt={post.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />

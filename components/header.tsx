@@ -25,7 +25,7 @@ export function Header() {
             <Link href="/" className="flex items-center space-x-2 flex-shrink-0">
             <div className="w-12 h-12 rounded-full overflow-hidden flex-shrink-0">
                 <Image
-                  src="/images/munSeongJin.jpeg" 
+                  src="/images/profile/munSeongJin.jpeg" 
                   alt="문성진 프로필" 
                   width={32} 
                   height={32}

@@ -2,7 +2,7 @@
 title: "AI 시대, 미래의 프레임워크를 상상해보자"
 excerpt: "프레임워크는 인간이 더 쉽게 개발하기 위한 도구로 시작했지만, AI가 코드를 작성하는 시대에도 그 본질은 사라지지 않을 수 있다. 반복되는 문제를 추상화하고 재사용한다는 관점에서 미래의 프레임워크가 어떻게 변할지 다섯 가지 시나리오로 정리했다."
 date: "2026-07-31"
-image: "/images/frameworks-thumbnail-refined.png"
+image: "/images/posts/ai-era-frameworks/thumbnail.png"
 tags: ["AI", "프레임워크", "React", "Spring", "개발", "미래", "생각정리", "아키텍처"]
 ---
 

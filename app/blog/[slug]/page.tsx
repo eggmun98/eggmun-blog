@@ -109,7 +109,7 @@ export default async function BlogPost({
 
           <div className="mb-8">
             <img
-              src={post.image || "/placeholder.svg"}
+              src={post.image || "/images/placeholders/placeholder.svg"}
               alt={post.title}
               className="w-full h-64 object-cover rounded-lg"
             />

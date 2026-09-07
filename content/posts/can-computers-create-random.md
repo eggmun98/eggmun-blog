@@ -2,7 +2,7 @@
 title: "컴퓨터는 정말 랜덤을 만들 수 있을까?"
 excerpt: "컴퓨터가 왜 스스로 진짜 랜덤을 만들기 어려운지, 우리가 랜덤이라고 부르는 것이 무엇인지 확률과 계산의 관점에서 생각해 본다."
 date: "2026-08-06"
-image: "/images/random-computer-thumbnail.png"
+image: "/images/posts/can-computers-create-random/thumbnail.png"
 tags: ["컴퓨터", "랜덤", "확률", "프로그래밍", "생각정리"]
 ---
 
