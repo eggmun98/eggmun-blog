@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { MapPin, Calendar, Mountain, Dumbbell, DotSquare, TvMinimalPlay } from "lucide-react"
+import { MapPin, Calendar, Mountain, Dumbbell, DotSquare, TvMinimalPlay, BookOpen, Images } from "lucide-react"
 import Image from "next/image"
 
 export default function AboutPage() {
@@ -22,6 +22,8 @@ export default function AboutPage() {
     { name: "클라이밍", icon: Mountain, description: "더클 기준 파랑색 레벨이며, 문제를 푸는 과정이 재미있습니다. 다음 목표는 빨강색 완등입니다." },
     { name: "오목", icon: DotSquare, description: "현재 4단이며 5단을 목표로 하고 있습니다. 수싸움을 하며 전략을 세우는 게 매력적이라 즐겨 둡니다." },
     { name: "예능", icon: TvMinimalPlay, description: "무한도전, 신서유기, 기안장 같은 예능을 즐겨봅니다. 저에게 웃음을 가져다주는 소중한 취미입니다." },
+    { name: "독서", icon: BookOpen, description: "책을 읽으며 새로운 관점을 만나고, 읽고 난 뒤 생각을 정리하거나 이야기 나누는 것을 즐깁니다." },
+    { name: "전시회", icon: Images, description: "다양한 작품과 공간을 경험하며 새로운 시선과 영감을 얻는 것을 좋아합니다." },
   ]
 
   return (
