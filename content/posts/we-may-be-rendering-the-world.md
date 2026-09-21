@@ -1,7 +1,7 @@
 ---
 title: "우리의 뇌도 렌더러일까?"
 excerpt: "색과 소리부터 감각, 현실, 자아까지, 개발자에게 익숙한 렌더링이라는 멘탈 모델로 우리가 경험하는 세계를 바라본 기록."
-date: "2026-09-17"
+date: "2026-09-21"
 image: "/images/posts/we-may-be-rendering-the-world/thumbnail.png"
 tags: ["렌더링", "의식", "현실", "철학", "개발자"]
 ---
